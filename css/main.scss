@@ -1,5 +1,13 @@
+*, ::before, ::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
 body{
     font-family: 'Rubik', "open sans", serif;
+    user-select: none;
     main{
         width: 100%;
         height: auto;
@@ -9,7 +17,7 @@ body{
         align-items: center;
         justify-content: center;
         gap: 2em;
-        margin-top: 2em;
+        margin: 2em 0;
 
         .chart-container{
             position: relative;
@@ -33,7 +41,29 @@ body{
                 background: grey;
                 border-radius: 1000px;
             }
+            div{
+                margin: 2em 0;
+                label{
+                    cursor: pointer;
+                    position: relative;
+                    padding: 1em;
+                    span{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 1000px;
+                        background: rgb(212 159 236);
+                        z-index: -1;
+                    }
+                }
+            }
+
         }
+    }
+    .portraitMode{
+        display: none;
     }
 }
 
@@ -42,6 +72,46 @@ body{
         .chart-container{
             width: 100%;
             height: auto;
+        }
+    }
+}
+
+@media (orientation: portrait) {
+    main{
+        display: none!important;
+    }
+    .portraitMode{
+        display: flex!important;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .wrapper{
+            width: 80%;
+            height: auto;
+            background: #e9e9e9;
+            border-radius: 15px;
+            padding: 1em;
+            gap: 1em;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 6px 0 0 grey;
+
+            i{
+                width: fit-content;
+                animation: 3s spin linear infinite;
+            }
+            
+            @keyframes spin {
+                from{
+                    transform: rotate(0);
+                }
+                to{
+                    transform: rotate(360deg);
+                }
+            }
         }
     }
 }

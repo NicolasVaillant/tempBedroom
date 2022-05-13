@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="js/script.js" defer></script>
-    
+    <link href="fontawesome/css/all.css" rel="stylesheet">
     <title>tempBedroom</title>
 </head>
 
@@ -22,11 +22,25 @@
     </div>
     <div class="explication">
         <hr>
+        <div>
+            <label for="check">
+                <input type="checkbox" class="check" id="check"> Afficher la moyenne de la chambre
+                <span></span>
+            </label>
+        </div>
+        
         <p>La température de la chambre est mesurée avec un capteur positionné sur le bureau, non exposé
         au soleil direct.</p>
         <p>La températur extérieure est récupérée avec l'API d'<a href="https://openweathermap.org/current">OpenWeatherMap.</a></p>
     </div>
 </main>
+<div class="portraitMode">
+    <div class="wrapper">
+        <i class="fas fa-sync fa-3x"></i>
+        <h1>Rotation obligatoire</h1>
+        <p>Le graphique ne s'affichera pas proprement en mode portrait.</p>
+    </div>
+</div>
 </body>
 
 </html>

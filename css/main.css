@@ -1,5 +1,13 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
 body {
   font-family: "Rubik", "open sans", serif;
+  user-select: none;
 }
 body main {
   width: 100%;
@@ -10,7 +18,7 @@ body main {
   align-items: center;
   justify-content: center;
   gap: 2em;
-  margin-top: 2em;
+  margin: 2em 0;
 }
 body main .chart-container {
   position: relative;
@@ -34,11 +42,69 @@ body main .explication hr {
   background: grey;
   border-radius: 1000px;
 }
+body main .explication div {
+  margin: 2em 0;
+}
+body main .explication div label {
+  cursor: pointer;
+  position: relative;
+  padding: 1em;
+}
+body main .explication div label span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1000px;
+  background: #d49fec;
+  z-index: -1;
+}
+body .portraitMode {
+  display: none;
+}
 
 @media all and (max-width: 500px) {
   main .chart-container {
     width: 100%;
     height: auto;
+  }
+}
+@media (orientation: portrait) {
+  main {
+    display: none !important;
+  }
+
+  .portraitMode {
+    display: flex !important;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .portraitMode .wrapper {
+    width: 80%;
+    height: auto;
+    background: #e9e9e9;
+    border-radius: 15px;
+    padding: 1em;
+    gap: 1em;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 6px 0 0 grey;
+  }
+  .portraitMode .wrapper i {
+    width: fit-content;
+    animation: 3s spin linear infinite;
+  }
+  @keyframes spin {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 }
 
