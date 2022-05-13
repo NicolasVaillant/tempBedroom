@@ -47,6 +47,11 @@ body{
                     cursor: pointer;
                     position: relative;
                     padding: 1em;
+                    display: flex;
+                    justify-content: flex-start;
+                    width: fit-content;
+                    gap: 1em;
+                    align-items: center;
                     span{
                         position: absolute;
                         top: 0;
