@@ -1,0 +1,47 @@
+body{
+    font-family: 'Rubik', "open sans", serif;
+    main{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        gap: 2em;
+        margin-top: 2em;
+
+        .chart-container{
+            position: relative;
+            width: 80%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+
+            canvas{
+                width: 100% !important;
+                height: auto!important;
+            }
+        }
+        .explication{
+            width: 80%;
+            hr{
+                border: 1px solid grey;
+                background: grey;
+                border-radius: 1000px;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 500px) {
+    main{
+        .chart-container{
+            width: 100%;
+            height: auto;
+        }
+    }
+}

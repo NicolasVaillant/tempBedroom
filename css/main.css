@@ -1,0 +1,45 @@
+body {
+  font-family: "Rubik", "open sans", serif;
+}
+body main {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  margin-top: 2em;
+}
+body main .chart-container {
+  position: relative;
+  width: 80%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+body main .chart-container canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+body main .explication {
+  width: 80%;
+}
+body main .explication hr {
+  border: 1px solid grey;
+  background: grey;
+  border-radius: 1000px;
+}
+
+@media all and (max-width: 500px) {
+  main .chart-container {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
