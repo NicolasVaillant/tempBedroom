@@ -1,5 +1,6 @@
 //JS FILE
 const ctx = document.getElementById('myChart').getContext('2d');
+const monthTag = document.querySelector('.moyMonth')
 
 window.onload = () => {
     getDate()
@@ -74,13 +75,43 @@ function getChartData(){
     const multiple = tempHome[0].length
     for (let i = 0; i < multiple; i++) {
         tempArray.push(numAverage(tempHome[0]))
-        if(i === multiple - 1){
-            console.log("ok")
-        }
+        // if(i === multiple - 1){
+        //     console.log("ok")
+        // }
     }
     addDataMoy(numAverage(tempArray), multiple)
-
+    getLabels()
 }
+let monthA = []
+function getLabels(){
+    let labels = myChart.data.labels
+    let data = myChart.data.datasets[0].data
+    let date = new Date()
+    let current = date.getMonth() + 1
+    let month = toMonthName(current)
+
+    for (let i = 0; i < labels.length; i++) {
+        let split = labels[i].split(" ")
+
+        if(month === split[1]) {
+            monthA.push(data[i])
+        }else{
+            console.log("Aucune donnée")
+        }
+    }
+    monthTag.innerHTML = `${numAverage(monthA)}°C`
+    // console.log(numAverage(monthA))
+}
+
+function toMonthName(monthNumber) {
+    const date = new Date();
+    date.setMonth(monthNumber - 1);
+
+    return date.toLocaleString('en-US', {
+        month: 'long',
+    });
+}
+
 
 const myChart = new Chart(ctx, {
     type: 'line',

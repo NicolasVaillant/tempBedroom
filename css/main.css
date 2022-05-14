@@ -42,10 +42,13 @@ body main .explication hr {
   background: grey;
   border-radius: 1000px;
 }
-body main .explication div {
+body main .explication #sep {
   margin: 2em 0;
 }
-body main .explication div label {
+body main .explication div:not(.month) {
+  margin: 2em 0;
+}
+body main .explication div:not(.month) label {
   cursor: pointer;
   position: relative;
   padding: 1em;
@@ -55,7 +58,7 @@ body main .explication div label {
   gap: 1em;
   align-items: center;
 }
-body main .explication div label span {
+body main .explication div:not(.month) label span {
   position: absolute;
   top: 0;
   left: 0;
@@ -64,6 +67,13 @@ body main .explication div label span {
   border-radius: 1000px;
   background: #d49fec;
   z-index: -1;
+}
+body main .explication .month {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5em;
 }
 body .portraitMode {
   display: none;
